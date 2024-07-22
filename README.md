@@ -1,4 +1,4 @@
-# Screenmatch frases aleatórias
+# Screenmatch - Random Quotes
 
 This project was developed to practice data persistence and create an API using Spring Boot Web. The project consists of retrieving phrases from movie characters randomly from the database.
 
