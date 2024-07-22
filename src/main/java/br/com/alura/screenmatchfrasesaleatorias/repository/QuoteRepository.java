@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Optional;
 
 public interface QuoteRepository extends JpaRepository<Quote, Long> {
-   @Query("SELECT q from Quote q ORDER BY q.id DESC LIMIT 1")
-   Optional<Quote> findTopByOrderByDesc();
+   @Query("SELECT q from Quote q ORDER BY function('RANDOM') LIMIT 1")
+   Quote findRandomQuote();
 }

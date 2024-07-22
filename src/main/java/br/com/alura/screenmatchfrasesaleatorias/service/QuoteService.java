@@ -15,31 +15,7 @@ public class QuoteService {
     private QuoteRepository quoteRepository;
 
     public QuoteDTO getRandomQuote() {
-        Random random = new Random();
-
-        long minId = 1L;
-        long maxId = 1L;
-        Optional<Quote> lastQuoteInDb =
-                this.quoteRepository.findTopByOrderByDesc();
-
-        if(lastQuoteInDb.isPresent()) {
-            maxId = lastQuoteInDb.get().getId();
-        }
-
-        if (maxId < minId) {
-            throw new IllegalStateException("Database has no quotes.");
-        }
-
-        long randomId;
-        Optional<Quote> randomQuote;
-
-        do {
-            randomId = random.nextLong(maxId - minId + 1) + minId;
-
-            randomQuote = this.quoteRepository.findById(randomId);
-        } while (randomQuote.isEmpty());
-
-        return converteDado(randomQuote.get());
+        return converteDado(this.quoteRepository.findRandomQuote());
     }
 
     private QuoteDTO converteDado(Quote quote) {
