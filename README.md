@@ -29,8 +29,6 @@ This project was developed with the aim of learning and demonstrating skills in:
 
 ## Technologies Used
 
-## Technologies Used
-
 - **Java** - Main programming language
 - **Spring Boot** - Framework for building applications
 - **Spring Boot Web** - Provides the web layer for building RESTful services and web applications
